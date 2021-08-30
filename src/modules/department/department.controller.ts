@@ -1,7 +1,7 @@
 import { Controller, Get, Param, ParseIntPipe, Post, UsePipes, Body} from '@nestjs/common';
-import { DepartmentService } from './department.service';
-import { Department } from './department.model';
-import { CreateDepartmentDto } from './create-department.dto';
+import { DepartmentService } from './services/department.service';
+import { Department } from './models/department.model';
+import { CreateDepartmentDto } from './dto/create-department.dto';
 import { InternalServerErrorException } from '@nestjs/common';
 
 

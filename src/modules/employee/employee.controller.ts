@@ -1,16 +1,13 @@
 import { Controller, Get, Param, ParseIntPipe, Post, UsePipes, Body} from '@nestjs/common';
-import { EmployeeService } from './employee.service';
-import { Employee } from './employee.model';
-import { CreateEmployeeDto } from './create-employee.dto'
-import { Logger } from "nestjs-pino";
+import { EmployeeService } from './services/employee.service';
+import { Employee } from './models/employee.model';
+import { CreateEmployeeDto } from './dto/create-employee.dto'
 
 
 @Controller('employee')
 export class EmployeeController {
  
-  constructor(private readonly employeeService: EmployeeService,
-        private readonly logger: Logger
-    ) {}
+  constructor(private readonly employeeService: EmployeeService) {}
 
   @Get()
   async getEmployees(): Promise<Employee[]> {
@@ -27,7 +24,6 @@ export class EmployeeController {
 
   @Get()
   findAll(): Promise<Employee[]> {
-    this.logger.debug("getHello()");
     return this.employeeService.findAll();
   }
 

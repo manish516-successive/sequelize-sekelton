@@ -1,32 +1,15 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { EmployeeModule, DepartmentModule } from './modules/';
-import { ConfigModule } from '@nestjs/config';
-import { LoggerModule } from "nestjs-pino";
-
+import { EmployeeModule } from './modules/employee/employee.module';
+import { DepartmentModule } from './modules/department/department.module';
+import { DatabaseConfig } from './common/configs/database.config'
 
 
 @Module({
   imports: [
-  ConfigModule.forRoot(),
-    SequelizeModule.forRoot({
-      dialect: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'manish',
-      password: 'test@123',
-      database: 'test',
-      autoLoadModels: true
-    }),
-    LoggerModule.forRoot({
-      pinoHttp: [
-        {
-          name: 'add some name to every JSON line',
-          level: process.env.NODE_ENV !== 'production' ? 'debug' : 'info'
-        },
-      ]
-    }),
-    EmployeeModule,DepartmentModule
+    SequelizeModule.forRoot(DatabaseConfig),
+    EmployeeModule,
+    DepartmentModule
   ],
 })
 export class AppModule {}

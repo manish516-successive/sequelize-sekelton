@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { Employee } from './employee.model';
-import { CreateEmployeeDto } from './create-employee.dto'
+import { Employee } from '../models/employee.model';
+import { CreateEmployeeDto } from '../dto/create-employee.dto'
 import { InjectModel } from '@nestjs/sequelize';
 import { Sequelize } from 'sequelize-typescript';
 import { QueryTypes } from 'sequelize';

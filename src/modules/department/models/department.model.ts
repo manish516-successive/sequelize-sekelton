@@ -1,5 +1,5 @@
 import { Column, Model, Table, HasMany } from 'sequelize-typescript';
-import { Employee } from "../employee/employee.model";
+import { Employee } from "../../employee/models/employee.model";
 
 
 @Table

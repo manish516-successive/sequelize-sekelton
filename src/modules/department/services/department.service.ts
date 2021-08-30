@@ -1,11 +1,11 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { Department } from './department.model';
-import { CreateDepartmentDto } from './create-department.dto'
+import { Department } from '../models/department.model';
+import { CreateDepartmentDto } from '../dto/create-department.dto'
 import { InjectModel } from '@nestjs/sequelize';
-import { EmployeeService } from "../employee/employee.service";
+import { EmployeeService } from "../../employee/services/employee.service";
 import { InternalServerErrorException } from '@nestjs/common';
 import { Sequelize } from 'sequelize-typescript';
-import { Employee } from "../employee/employee.model";
+import { Employee } from "../../employee/models/employee.model";
 
 
 @Injectable()

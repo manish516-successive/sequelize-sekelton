@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { DepartmentService } from '../department/department.service';
-import { DepartmentController } from '../department/department.controller'
-import { Department } from '../department/department.model';
+import { DepartmentService } from './services/department.service';
+import { DepartmentController } from './department.controller'
+import { Department } from './models/department.model';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { EmployeeModule } from './employee.module';
+import { EmployeeModule } from '../employee/employee.module';
 
 
 @Module({

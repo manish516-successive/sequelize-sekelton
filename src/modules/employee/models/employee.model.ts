@@ -1,5 +1,5 @@
 import { Column, Model, Table, BelongsTo, ForeignKey } from 'sequelize-typescript';
-import { Department } from "../department/department.model";
+import { Department } from "../../department/models/department.model";
 
 
 @Table
